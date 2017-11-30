@@ -16,8 +16,7 @@ import io.reactivex.observers.DisposableSingleObserver;
 @InjectViewState
 public class ListingsPresenter extends MvpPresenter<ListingsView> {
 
-    @Inject
-    public ListingsInteractor listingsInteractor;
+    @Inject ListingsInteractor listingsInteractor;
 
     public ListingsPresenter() {
         MyApplication.getAppComponent().inject(this);

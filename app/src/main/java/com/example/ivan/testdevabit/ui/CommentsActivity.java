@@ -22,8 +22,7 @@ import java.util.List;
 
 public class CommentsActivity extends MvpAppCompatActivity implements CommentsView {
 
-    @InjectPresenter
-    CommentsPresenter mCommentsPresenter;
+    @InjectPresenter CommentsPresenter mCommentsPresenter;
     public static final String PERMALINK = "permalink";
     private String mPermalink;
     private RecyclerView mRecyclerViewComments;
@@ -54,7 +53,7 @@ public class CommentsActivity extends MvpAppCompatActivity implements CommentsVi
 
     private void initRecyclerView() {
         mRecyclerViewComments = findViewById(R.id.rv_comments);
-        mAdapter = new RecyclerViewAdapterComments(this);
+        mAdapter = new RecyclerViewAdapterComments();
         mManager = new LinearLayoutManager(this);
         mRecyclerViewComments.setAdapter(mAdapter);
         mRecyclerViewComments.setLayoutManager(mManager);

@@ -15,8 +15,7 @@ import io.reactivex.Single;
 
 public class CommentsInteractor {
 
-    @Inject
-    CommentsRepository commentsRepository;
+    @Inject CommentsRepository commentsRepository;
 
     public CommentsInteractor() {
         MyApplication.getAppComponent().inject(this);

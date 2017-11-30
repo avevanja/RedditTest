@@ -22,12 +22,15 @@ public class CommentsPresenter extends MvpPresenter<CommentsView> {
     CommentsInteractor commentsInteractor;
     private int positionCommentsList = 1;
 
+
     public CommentsPresenter() {
         MyApplication.getAppComponent().inject(this);
     }
 
     public void getComments(String url, String name) {
-        getViewState().showProgress();
+        if (name.equals(AppConstants.EMPTY_NAME)) {
+            getViewState().showProgress();
+        }
         commentsInteractor.getComments(url, name)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableSingleObserver<List<RedditListing>>() {

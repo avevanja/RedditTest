@@ -1,15 +1,12 @@
 package com.example.ivan.testdevabit.ui;
 
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.ivan.testdevabit.R;
 import com.example.ivan.testdevabit.entity.Child;
 
@@ -19,11 +16,6 @@ import java.util.List;
 public class RecyclerViewAdapterComments extends RecyclerView.Adapter<RecyclerViewAdapterComments.ViewHolder> {
 
     private List<Child> mComments = new ArrayList<>();
-    private Context mContext;
-
-    public RecyclerViewAdapterComments(Context mContext) {
-        this.mContext = mContext;
-    }
 
     public void addNewListings(List<Child> newListings) {
         int positionStart = mComments.size() - 1;
@@ -36,7 +28,7 @@ public class RecyclerViewAdapterComments extends RecyclerView.Adapter<RecyclerVi
     }
 
     public String getLastName() {
-        return mComments.get(mComments.size() - 1).getData().getName();
+        return mComments.get(mComments.size() - 1).getData().getId();
     }
 
     @Override
@@ -47,7 +39,7 @@ public class RecyclerViewAdapterComments extends RecyclerView.Adapter<RecyclerVi
 
     @Override
     public void onBindViewHolder(RecyclerViewAdapterComments.ViewHolder holder, int position) {
-        holder.setListing(mComments.get(position));
+        holder.setComment(mComments.get(position));
     }
 
     @Override
@@ -64,7 +56,7 @@ public class RecyclerViewAdapterComments extends RecyclerView.Adapter<RecyclerVi
             textViewComment = itemView.findViewById(R.id.tv_comment);
         }
 
-        public void setListing(Child redditListing) {
+        public void setComment(Child redditListing) {
             textViewComment.setText(redditListing.getData().getBodyComment());
         }
     }

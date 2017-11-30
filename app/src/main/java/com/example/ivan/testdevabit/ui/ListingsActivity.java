@@ -19,8 +19,7 @@ import java.util.List;
 
 public class ListingsActivity extends MvpAppCompatActivity implements ListingsView, RecyclerViewAdapterListings.ListenerClickItem {
 
-    @InjectPresenter
-    public ListingsPresenter mPresenter;
+    @InjectPresenter public ListingsPresenter mPresenter;
     private RecyclerView mRecyclerViewListings;
     private LinearLayoutManager mManager;
     private RecyclerViewAdapterListings mAdapter;

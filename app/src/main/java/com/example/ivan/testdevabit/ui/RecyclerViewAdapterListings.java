@@ -63,7 +63,7 @@ public class RecyclerViewAdapterListings extends RecyclerView.Adapter<RecyclerVi
             imageViewThumbnail = itemView.findViewById(R.id.iv_listing);
             textViewTitle = itemView.findViewById(R.id.tv_title);
             itemView.setOnClickListener(view -> mListenerClickItem.onClickListing(mListings.get(getAdapterPosition())
-            .getData().getPermalink()));
+                    .getData().getPermalink()));
         }
 
         public void setListing(Child redditListing) {

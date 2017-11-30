@@ -13,8 +13,7 @@ import io.reactivex.Single;
 
 public class ListingsInteractor {
 
-    @Inject
-    public ListingsRepository listingsRepository;
+    @Inject ListingsRepository listingsRepository;
 
     public ListingsInteractor() {
         MyApplication.getAppComponent().inject(this);
