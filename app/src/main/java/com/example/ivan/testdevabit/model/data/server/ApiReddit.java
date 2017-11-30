@@ -18,5 +18,5 @@ public interface ApiReddit {
     Single<RedditListing> getRedditListing(@QueryMap Map<String, String> params);
 
     @GET()
-    Single<List<RedditListing>> getComments(@Url String url, @QueryMap Map<String, String> params);
+    Single<List<RedditListing>> getComments(@Url String url);
 }

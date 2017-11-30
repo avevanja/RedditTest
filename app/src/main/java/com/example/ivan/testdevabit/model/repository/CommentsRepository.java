@@ -12,9 +12,9 @@ import io.reactivex.schedulers.Schedulers;
 
 public class CommentsRepository {
 
-    public Single<List<RedditListing>> getComments(String url, Map<String, String> params){
+    public Single<List<RedditListing>> getComments(String url){
         return RetrofitBuilder.getRedditApiWithRx()
-                .getComments(url, params)
+                .getComments(url)
                 .subscribeOn(Schedulers.io());
     }
 }

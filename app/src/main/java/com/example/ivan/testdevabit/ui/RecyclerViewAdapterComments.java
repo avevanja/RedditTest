@@ -27,9 +27,6 @@ public class RecyclerViewAdapterComments extends RecyclerView.Adapter<RecyclerVi
         notifyItemRangeChanged(positionStart, mComments.size());
     }
 
-    public String getLastName() {
-        return mComments.get(mComments.size() - 1).getData().getId();
-    }
 
     @Override
     public RecyclerViewAdapterComments.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

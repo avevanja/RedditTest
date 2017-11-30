@@ -21,10 +21,8 @@ public class CommentsInteractor {
         MyApplication.getAppComponent().inject(this);
     }
 
-    public Single<List<RedditListing>> getComments(String url, String name) {
+    public Single<List<RedditListing>> getComments(String url) {
         url = url.substring(0, url.length() - 1) + ".json";
-        Map<String, String> params = new HashMap<>();
-        params.put("after", name);
-        return commentsRepository.getComments(url, params);
+        return commentsRepository.getComments(url);
     }
 }

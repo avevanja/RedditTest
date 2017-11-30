@@ -44,7 +44,7 @@ public class CommentsActivity extends MvpAppCompatActivity implements CommentsVi
         initView();
         initRecyclerView();
         getIntentData();
-        mCommentsPresenter.getComments(mPermalink, AppConstants.EMPTY_NAME);
+        mCommentsPresenter.getComments(mPermalink);
     }
 
     private void initView() {
@@ -57,12 +57,6 @@ public class CommentsActivity extends MvpAppCompatActivity implements CommentsVi
         mManager = new LinearLayoutManager(this);
         mRecyclerViewComments.setAdapter(mAdapter);
         mRecyclerViewComments.setLayoutManager(mManager);
-        mRecyclerViewComments.addOnScrollListener(new EndlessRecyclerOnScrollListener(mManager) {
-            @Override
-            public void onLoadMore(int current_page) {
-                mCommentsPresenter.getComments(mPermalink, mAdapter.getLastName());
-            }
-        });
     }
 
 

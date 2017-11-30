@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TestDevabit.iml" filepath="$PROJECT_DIR$/TestDevabit.iml" />
+      <module fileurl="file://C:\Users\aveva\AndroidProjects\TestDevabit\TestDevabit.iml" filepath="C:\Users\aveva\AndroidProjects\TestDevabit\TestDevabit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\aveva\AndroidProjects\TestDevabit\app\app.iml" filepath="C:\Users\aveva\AndroidProjects\TestDevabit\app\app.iml" />
     </modules>
   </component>
 </project>
