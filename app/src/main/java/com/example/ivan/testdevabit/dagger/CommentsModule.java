@@ -6,8 +6,9 @@ import com.example.ivan.testdevabit.model.repository.CommentsRepository;
 
 import javax.inject.Singleton;
 
+import dagger.Module;
 import dagger.Provides;
-
+@Module
 public class CommentsModule {
 
     @Provides

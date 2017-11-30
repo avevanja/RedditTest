@@ -5,8 +5,12 @@ import com.example.ivan.testdevabit.MyApplication;
 import com.example.ivan.testdevabit.entity.RedditListing;
 import com.example.ivan.testdevabit.model.repository.CommentsRepository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
+
 import io.reactivex.Single;
 
 public class CommentsInteractor {
@@ -18,9 +22,10 @@ public class CommentsInteractor {
         MyApplication.getAppComponent().inject(this);
     }
 
-    public Single<List<RedditListing>> getComments(String url){
-
-       return commentsRepository.getComments(url);
-
+    public Single<List<RedditListing>> getComments(String url, String name) {
+        url = url.substring(0, url.length() - 1) + ".json";
+        Map<String, String> params = new HashMap<>();
+        params.put("after", name);
+        return commentsRepository.getComments(url, params);
     }
 }

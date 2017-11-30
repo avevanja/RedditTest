@@ -12,7 +12,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 @Singleton
-@Component(modules = {ListingsModule.class})
+@Component(modules = {ListingsModule.class, CommentsModule.class})
 public interface AppComponent {
 
     void inject(ListingsInteractor listingsInteractor);

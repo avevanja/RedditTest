@@ -14,7 +14,8 @@ import io.reactivex.schedulers.Schedulers;
 public class ListingsRepository {
 
     public Single<RedditListing> getListing(Map<String, String> params){
-        return RetrofitBuilder.getRedditApiWithRx().getRedditListing(params)
+        return RetrofitBuilder.getRedditApiWithRx()
+                .getRedditListing(params)
                 .subscribeOn(Schedulers.io());
     }
 }

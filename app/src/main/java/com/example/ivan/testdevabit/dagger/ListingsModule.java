@@ -15,13 +15,13 @@ public class ListingsModule {
 
     @Provides
     @Singleton
-    public ListingsInteractor providesApexPostInteractor(){
+    public ListingsInteractor providesListingInteractor(){
         return new ListingsInteractor();
     }
 
     @Provides
     @Singleton
-    public ListingsRepository providesApexPostsRepository(){
+    public ListingsRepository providesListingRepository(){
         return new ListingsRepository();
     }
 

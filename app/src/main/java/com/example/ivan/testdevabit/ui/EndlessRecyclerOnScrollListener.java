@@ -1,4 +1,4 @@
-package com.example.ivan.testdevabit;
+package com.example.ivan.testdevabit.ui;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ public abstract class EndlessRecyclerOnScrollListener extends RecyclerView.OnScr
 
     private int previousTotal = 0;
     private boolean loading = true;
-    private int visibleThreshold = 6;
+    private int visibleThreshold = 5;
     int firstVisibleItem, visibleItemCount, totalItemCount;
 
     private int current_page = 1;

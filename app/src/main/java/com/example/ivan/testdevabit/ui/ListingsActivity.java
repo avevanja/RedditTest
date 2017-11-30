@@ -10,10 +10,8 @@ import android.widget.Toast;
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.example.ivan.testdevabit.AppConstants;
-import com.example.ivan.testdevabit.EndlessRecyclerOnScrollListener;
 import com.example.ivan.testdevabit.R;
 import com.example.ivan.testdevabit.entity.Child;
-import com.example.ivan.testdevabit.entity.RedditListing;
 import com.example.ivan.testdevabit.presentation.ListingsPresenter;
 import com.example.ivan.testdevabit.presentation.ListingsView;
 
@@ -73,5 +71,10 @@ public class ListingsActivity extends MvpAppCompatActivity implements ListingsVi
     @Override
     public void hideProgress() {
         mProgressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onClickListing(String permalink) {
+        CommentsActivity.start(this, permalink);
     }
 }

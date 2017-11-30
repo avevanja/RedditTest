@@ -62,6 +62,8 @@ public class RecyclerViewAdapterListings extends RecyclerView.Adapter<RecyclerVi
             super(itemView);
             imageViewThumbnail = itemView.findViewById(R.id.iv_listing);
             textViewTitle = itemView.findViewById(R.id.tv_title);
+            itemView.setOnClickListener(view -> mListenerClickItem.onClickListing(mListings.get(getAdapterPosition())
+            .getData().getPermalink()));
         }
 
         public void setListing(Child redditListing) {
@@ -70,12 +72,15 @@ public class RecyclerViewAdapterListings extends RecyclerView.Adapter<RecyclerVi
                 Glide
                         .with(mContext)
                         .load(redditListing.getData().getThumbnail())
+                        .error(R.drawable.icon_error)
                         .into(imageViewThumbnail);
             }
         }
     }
 
     interface ListenerClickItem {
+
+        void onClickListing(String permalink);
 
     }
 }

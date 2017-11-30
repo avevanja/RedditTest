@@ -10,12 +10,13 @@ import io.reactivex.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
+import retrofit2.http.Url;
 
 public interface ApiReddit {
 
     @GET("/r/all/top.json")
     Single<RedditListing> getRedditListing(@QueryMap Map<String, String> params);
 
-    @GET("{permalink}")
-    Single<List<RedditListing>> getComments(@Path("permalink") String url);
+    @GET()
+    Single<List<RedditListing>> getComments(@Url String url, @QueryMap Map<String, String> params);
 }
