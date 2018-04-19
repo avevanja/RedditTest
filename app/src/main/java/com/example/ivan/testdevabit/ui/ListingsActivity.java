@@ -3,6 +3,7 @@ package com.example.ivan.testdevabit.ui;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -75,5 +76,6 @@ public class ListingsActivity extends MvpAppCompatActivity implements ListingsVi
     @Override
     public void onClickListing(String permalink) {
         CommentsActivity.start(this, permalink);
+        Log.d("HUAIWEI TEST", "click on card");
     }
 }
