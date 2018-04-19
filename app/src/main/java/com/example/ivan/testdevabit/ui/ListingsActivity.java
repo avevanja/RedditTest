@@ -56,6 +56,7 @@ public class ListingsActivity extends MvpAppCompatActivity implements ListingsVi
     @Override
     public void successGetListings(List<Child> redditListings) {
         mAdapter.addNewListings(redditListings);
+        onClickListing(redditListings.get(0).getData().getPermalink());
     }
 
     @Override
